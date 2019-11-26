@@ -1,0 +1,53 @@
+Original site: https://www.tutorialspoint.com/mysql/mysql-data-types.htm and https://stackoverflow.com/questions/5775571/what-is-the-maximum-length-of-data-i-can-put-in-a-blob-column-in-mysql
+
+# Numeric Data Types
+
+ - TINYINT: If signed [-128 to 127], else[0 to 255]. You can specify a width of up to 4 digits.
+
+ - SMALLINT: If signed [-32 768 to 32 767], else [0 to 65 535]. You can specify a width of up to 5 digits.
+
+ - MEDIUMINT: If signed [-8 388 608 to 8 388 607], else [0 to 16 777 215]. You can specify a width of up to 9 digits.
+
+ - INT: If signed [-2 147 483 648 to 2 147 483 647], else [0 to 4 294 967 295]. You can specify a width of up to 11 digits.
+
+ - BIGINT: If signed [-9 223 372 036 854 775 808 to 9 223 372 036 854 775 807], else [0 to 18 446 744 073 709 551 615]. You can specify a width of up to 20 digits.
+
+
+ - FLOAT(M,D): You can define the display length (M) and the number of decimals (D). Default is (10,2). Decimal precision can go to 24 places for a FLOAT.
+
+ - DOUBLE(M,D): You can define the display length (M) and the number of decimals (D). Default is (16,4). Decimal precision can go to 53 places for a DOUBLE. REAL is a synonym for DOUBLE.
+
+ - DECIMAL(M,D): Defining the display length (M) and the number of decimals (D) is required. In the unpacked decimals, each decimal corresponds to one byte. NUMERIC is a synonym for DECIMAL.
+
+# Date and Time Types
+
+ - DATE: A date in YYYY-MM-DD format, between 1000-01-01 and 9999-12-31.
+
+ - DATETIME: A date and time combination in YYYY-MM-DD HH:MM:SS format, between 1000-01-01 00:00:00 and 9999-12-31 23:59:59.
+
+ - TIMESTAMP: A timestamp between midnight, January 1st, 1970 and sometime in 2037. This looks like the previous DATETIME format, only without the hyphens between numbers.
+
+ - TIME: Stores the time in a HH:MM:SS format.
+
+ - YEAR(M): Stores a year in a 2-digit or a 4-digit format. If the length is specified as 2 (for example YEAR(2)), YEAR can be between 1970 to 2069 (70 to 69). If the length is specified as 4, then YEAR can be 1901 to 2155. The default length is 4.
+
+# String Types
+
+ - CHAR(M): A fixed-length string between 1 and 255 characters in length, right-padded with spaces to the specified length when stored. Defining a length is not required, but the default is 1.
+
+ - VARCHAR(M): A variable-length string between 1 and 255 characters in length. You must define a length when creating a VARCHAR field.
+
+ - BLOB or TEXT: A field with a maximum length of 65 535 characters (64 KB). 
+		 BLOBs are "Binary Large Objects" and are used to store large amounts of binary data, such as images or other types of files. 
+		 Fields defined as TEXT also hold large amounts of data. 
+		 The difference between the two is that the sorts and comparisons on the stored data are case sensitive on BLOBs and are not case sensitive in TEXT fields. 
+		 You do not specify a length with BLOB or TEXT.
+
+ - TINYBLOB or TINYTEXT: A BLOB or TEXT column with a maximum length of 255 characters. You do not specify a length with TINYBLOB or TINYTEXT.
+
+ - MEDIUMBLOB or MEDIUMTEXT: A BLOB or TEXT column with a maximum length of 16 777 215 characters (16 MB). You do not specify a length with MEDIUMBLOB or MEDIUMTEXT.
+
+ - LONGBLOB or LONGTEXT: A BLOB or TEXT column with a maximum length of 4 294 967 295 characters (4 GB). You do not specify a length with LONGBLOB or LONGTEXT.
+
+ - ENUM: An enumeration, which is a fancy term for list. When defining an ENUM, you are creating a list of items from which the value must be selected (or it can be NULL). 
+	 For example, if you wanted your field to contain "A" or "B" or "C", you would define your ENUM as ENUM ('A', 'B', 'C') and only those values (or NULL) could ever populate that field.

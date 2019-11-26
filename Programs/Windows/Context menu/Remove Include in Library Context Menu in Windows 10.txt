@@ -1,0 +1,7 @@
+Original site: https://winaero.com/blog/remove-include-library-windows-10/
+
+Open registry and add a - in front of "Data":
+
+- Location: `HKEY_CLASSES_ROOT\Folder\ShellEx\ContextMenuHandlers\Library Location`
+
+NOTE: This is the normal value of the subkey: {3dad6c5d-2167-4cae-9914-f99e41c12cfa}

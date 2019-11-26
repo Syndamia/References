@@ -1,0 +1,12 @@
+Original site: https://www.askvg.com/tip-remove-scan-with-windows-defender-option-from-context-menu-in-windows-10/
+
+# Using registry editor
+Add a - in front of "Data" from the following locations
+
+ - Files context menu: `HKEY_CLASSES_ROOT\*\shellex\ContextMenuHandlers\EPP`
+ - Folders context menu: `HKEY_CLASSES_ROOT\Directory\shellex\ContextMenuHandlers\EPP`
+ - Drives context menu: `HKEY_CLASSES_ROOT\Drive\shellex\ContextMenuHandlers\EPP`
+
+Or just delete the following folder:
+
+ - `HKEY_CLASSES_ROOT\CLSID\{09A47860-11B0-4DA5-AFA5-26D86198A780}`

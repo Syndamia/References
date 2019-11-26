@@ -1,0 +1,7 @@
+Original site: https://superuser.com/questions/1387299/how-to-remove-open-folder-as-pycharm-project-edition?answertab=votes#tab-top
+
+Open registry and add a - in front of "Data":
+
+ - Folder background context menu: `Computer\HKEY_CLASSES_ROOT\Directory\Background\shell\PyCharm Community Edition`
+ - File context menu: `Navigate to Computer\HKEY_CLASSES_ROOT\*\shell\Open with PyCharm Community Edition`
+ - Folder context menu: `Computer\HKEY_CLASSES_ROOT\Directory\shell\PyCharm Community Edition`

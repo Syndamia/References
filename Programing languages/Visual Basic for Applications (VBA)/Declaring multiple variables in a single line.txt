@@ -1,0 +1,7 @@
+Original Site: https://social.msdn.microsoft.com/Forums/en-US/b970735b-43af-434f-9e4f-2fab4b796767/declaring-multiple-variable-in-single-line-in-excel-vba?forum=isvvba
+
+To declare mutliple variables on one line use:
+ - `Dim variable1 As DataType, strAddress2 As DataType, ...`
+
+NOTE: The following code does the same in VB.Net (Visual Basic), but doesn't work in VBA (first variable is set to DataType, but the other are left as Explicit)
+ - `Dim variable1, variable2, ... As DataType`

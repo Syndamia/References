@@ -1,0 +1,4 @@
+Original site: https://www.techonthenet.com/excel/formulas/rnd.php
+
+To create a random integer between two values (lowerbound and upperbound, includes the two numbers) use the following code (replace lowerbound and upperboud):
+ - `someVariable = Int ((upperbound - lowerbound + 1) * Rnd + lowerbound)`

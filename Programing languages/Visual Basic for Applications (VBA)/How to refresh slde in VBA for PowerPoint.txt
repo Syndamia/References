@@ -1,0 +1,4 @@
+Original site: https://stackoverflow.com/questions/14506324/how-to-refresh-the-active-slide-in-a-slide-show
+
+The following code refreshes the current slide:
+ - `Application.SlideShowWindows(1).View.GotoSlide Me.SlideIndex`

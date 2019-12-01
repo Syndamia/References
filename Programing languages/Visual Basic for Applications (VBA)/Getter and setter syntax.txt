@@ -3,13 +3,13 @@ Original site: https://stackoverflow.com/questions/29257127/vba-complicated-gett
 First you create a property (variable)
  - `Private mMyProperty As String`
 
-Setter syntax:
+Getter syntax:
 
 	Public Property Get MyProperty() As String
 	    MyProperty = mMyProperty
 	End Property
 
-Getter syntax:
+Setter syntax:
 
 	Public Property Let Transition(Value As String)
     	    mMyProperty = Value

@@ -1,0 +1,3 @@
+Original site: https://wiki.archlinux.org/index.php/systemd
+
+Use `journalctl -b` to view boot log

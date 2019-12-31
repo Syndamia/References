@@ -1,0 +1,87 @@
+Original site: http://linuxcommand.org/
+
+Command meanings:
+pwd - print working directory
+
+ls [options] [directory] - list files in directory
+    -l - lists files in long format
+    -la - lists all files in long format
+cd [directory] - change current directory
+
+less [text_file] - lets you see text files (in the terminal)
+
+file [file_name] - tells type of given file
+
+cp [option] [sources] [destination] - copies files and directories ; supports wildcards
+    -i - interactive option ; promts user before overwriting
+    cp file1 file2 - copies contents of file1 to file2 (creates or overwrites file2)
+    cp file1 dir1 - copies file1 into directory dir1
+    cp -R dir1 dir2 - copies contents of dir1 into dir2 (if dir2 exists, puts files in dir2/dir1, otherwise chreates dir2 and puts files in there)
+
+mv [option] [origins] [destination] - moves or renames files and directories ; supports wildcards
+    -i - interactive ; promts user before overwriting
+    mv file1 file2 - if file2 doesn't exist, file1 is renamed to file2, otherwise file2 contents are replaced
+    mv file1 file2 file3 dir1 - moves file1 file2 and file3 in dir1 (error if dir1 doesn't exist)
+    mv dir1 dir2 - if dir2 doesn't exist, dir1 is renamed, otherwise dir1 is moved into dir2 (dir2/dir1)
+
+rm [option] [files/directories] - removes files and directories ; supports wildcards
+    -i - interactive ; promts user before overwriting
+    rm file1 file2 - deletes file1 and file2
+    rm -r dir1 dir2 - deletes dir1 and dir2 along with all of it's contents
+
+mkdir [directory_name] - creates directories
+
+
+echo [argument] - prints text argument ; supports wildcards
+
+-----
+
+type [command_name] - shows type of command (executable (hashed), shell builtin, shell, alias)
+
+which [command_name] - shows location of executable program
+
+help [option] [shell_builtin_name] - shows information about given shell builtin (alternatively sometimes you can use shell_builtin --help)
+
+man [executable_name] - shows manual (documentation) for a given executable
+
+Special info:
+- .. refers to the parent directory (cd /usr/bin, then .. is /usr) and . refers to the working directory
+- $ is current user, # is root user
+- ~ is home directory (for current user)
+
+Expansion:
+- $((expression)) - solves arithmetic expressions ; only works with integers
+    (x**y) means x to the power of y (always written in brackets)
+- {element1, element2} - (braces) creates multiple strings, where it uses the string around it and fills the brackets space with a letter (for example Front-{A,B,C} will output Front-A Front-B Front-C)
+    it can contain a range of characters, for example {1..5} works like {1,2,3,4,5}
+    you can nest braces, for example {A{1,2}, B{3,4}}
+- $USER - contains the current user's name
+
+I/O Redirection:
+[command] > [file] - writes a command's output to a certain file (overwrites the file)
+[command] >> [file] - appends the command's output to a certain file (adds it to the bottom)
+[filter] < [file/directory] - filters information from file
+    [filter] < [file/directory] > [output_file] - filters information from file and puts it in a output_file
+[command] | [command] - the output from one command is fed into another command
+
+Filters:
+sort - sorts standard input and outputs it into starndart output
+uniq - removes duplicate lines
+grep - outputs lines, containing specified pattern of characters
+fmt - outputs formatted text
+pr - prepares text for printing
+head - outputs header (first few lines)
+tail - outputs last few lines
+tr - translated characters
+sed - stream editor (more sophisticated translation than tr)
+awk - programming language for constructing filters
+
+Wildcards (used in commands that accept multiple files and directories):
+* - matches any character
+? - matches any single character (??? means any three character string, ???? - four character string, ...)
+[characters] - matchs any character that is in a set of characters ([!characters] matches any character that isn't in the set)
+    [:alnum:] - alphanumeric characters
+    [:alpha:] - alphabetic characters
+    [:digit:] - numbers
+    [:upper:] - uppercase alphabetic characters
+    [:lower:] - lowercase alphabetic charcaters

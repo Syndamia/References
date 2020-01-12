@@ -1,0 +1,25 @@
+Original site: https://www.maketecheasier.com/uninstall-system-apps-without-root-android/ and https://www.maketecheasier.com/get-started-with-android-debug-bridge-adb/ and https://www.maketecheasier.com/enable-developer-options-in-android-42/
+
+First you need to install the required tools on your pc:
+    On Windows: 
+        1. Download the Windows sdk from here: https://developer.android.com/studio/releases/platform-tools
+        2. Extract files
+        3. Shift-right click on the 'platform-tools' folder and choose 'Open PowerShell window here' (or it could be named 'Open command window here')
+
+    On Linux: 
+        Install 'android-tools' from package manager or software center
+
+Then you need to enable USB debugging on your phone.
+    If you haven't enabled 'Developer options':
+        1. Go to phone settings
+        2. Scroll to the bottom and open 'About phone'
+        3. Find the 'Build number' box and click it 7 times
+
+    Enabling usb debugging:
+        1. Go to 'Developer options'
+        2. Scrool down to 'Debugging' section
+        3. Enable 'USB debugging'
+
+Note: when you connect it to your computer a popum message will appear, saying 'Allow USB debugging?'. Press 'Ok' and if you trust the computer, press 'Always allow from this computer'. If you close it by accident just disconnect and connect your phone.
+
+

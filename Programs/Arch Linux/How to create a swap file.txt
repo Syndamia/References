@@ -1,0 +1,18 @@
+Original sites: https://wiki.archlinux.org/index.php/Swap#Swap_file and https://bbs.archlinux.org/viewtopic.php?id=246287
+
+Note: All commands are done as root
+
+1. Creating a swap file: `fallocate -l 4G /swapfile` 
+    - G is for gigabyte and M is for megabyte, for hibernation it is recommended to be atleast as big as total RAM
+2. Set right permissions: `chmod 600 /swapfile`
+3. Format it to swap: `mkswap /swapfile`
+4. Activate it: `swapon /swapfile`
+5. Add entry in fstab: (add line in `/etc/fstab`) `/swapfile none swap defaults 0 0`
+
+Add entry in grub config:
+1. Find swap file offset: `filefrag -v /home/swapfile | awk '{ if($1=="0:"){print $4} }'`
+2. Modify grub settings: (in `/etc/default/grub`, on line `GRUB_CMDLINE_LINUX_DEFAULT` add this) `resume_offset=YourSwapFileOffset`
+    - note: `resume=` must have the drive where the swap file is located, you can set a uuid (`resume=UUID=YourUUID` ; use `blkid` to find UUID) or a path (`resume=/dev/sda1`)
+3. Update actual grub: `grub-mkconfig -o /boot/grub/grub.cfg`
+
+Note: to remove it, you first need to turn it off (`swapoff /swapfile`) and then you can remove it (`rm -f /swapfile`). Don't forget to remove the entry from fstab!

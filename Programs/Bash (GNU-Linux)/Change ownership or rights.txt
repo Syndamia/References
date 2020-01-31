@@ -1,0 +1,40 @@
+Original sites: https://askubuntu.com/questions/6723/change-folder-permissions-and-ownership and https://www.computerhope.com/unix/uchown.htm and https://www.computerhope.com/unix/uchmod.htm
+
+Chown (CHange OWNership):
+
+There are 3 types of file permissions:
+ - User: file permissions per single user (owner)
+ - Group: file permissions per single group of users
+ - Other: file permissions per every other user (known as others or the world)
+
+Syntax: `chown [options] {new-owner argument} {file}` ([] is optional, {} is required)
+
+Options:
+  -c , --changes : similar to `--verbose` but displays information about changed files
+  -v , --verbose : displays verbose information about the specified file
+  -f , --silent , --quiet : doesn't display output
+  -R , --recursive : change ownership to specified directory and all of it's contents (files and directories)
+
+New-owner argument (changes file owner):
+  - `user`: given user own the file (not any group he is in)
+  - `user:group`: given user and group own the file
+  - `:group`: given group owns the file
+  - `user:`: user and login group of user own the file
+  - `:`: does nothing, ownership stays the same
+
+Chmod (CHange MODe of access (permission)):
+
+Syntax: `chmod [options] {permissions} {file}` ([] is optional, {} is required)
+
+Options: see Chown
+
+Permissions:
+  Symbolic:
+    Example: `chown u=rwx,g=rx,o=r myfile`
+    - First it is implied if permissions are changed for User, Group or Others (u, g or o)
+    - Then there is a '=' signifying "set permissions to"
+    - Then you add 'r'(read), 'w'(write), 'x'(execute) to the end
+  Octal:
+    Example: `chwon 754`
+    - Each digit specifies the permissions of user, group and others in that order (permission 7 to user, 5 to group and 4 to others)
+    - 4 means "read", 2 means "write", 1 means "execute", 0 means "no permission" and you add them up for the desired permission (7 is 4+2+1 or read+write+execute, 5 is 4+1 or read+execute)

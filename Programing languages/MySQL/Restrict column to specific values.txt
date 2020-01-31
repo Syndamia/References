@@ -1,0 +1,14 @@
+Original site: https://stackoverflow.com/questions/2441427/restrict-varchar-column-to-specific-values
+
+To restrict the values of a column to be a determined set of values is done with a check constraint.
+
+Syntax: CONSTRAINT chk_ColumnName CHECK (ColumnName IN (value1, value2, ...))
+
+Example:
+
+CREATE TABLE SomeTable
+(
+   Id int NOT NULL,
+   Frequency varchar(200),
+   CONSTRAINT chk_Frequency CHECK (Frequency IN ('Daily', 'Weekly', 'Monthly', 'Yearly'))
+)

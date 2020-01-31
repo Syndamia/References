@@ -1,0 +1,9 @@
+Original site: https://askubuntu.com/questions/927854/how-do-i-increase-the-size-of-swapfile-without-removing-it-in-the-terminal
+
+Note: it's better to create a new one, rather than increasing the old one (see 'How to create a swap file.txt') because if could pose problems
+
+1. Disable current swap file: `sudo swapoff /swapfile`
+2. Append certain amount of zero bytes at the end of the file: `sudo dd if=/dev/zero of=/swapfile bs=1M count=1024 oflag=append conv=notrunc`
+  - bs is byte size, count is byte count; in the example 1 GiB is appended
+3. Set it up as a swap file: `sudo mkswap /swapfile`
+4. Enable swapping: `sudo swapon /swapfile`

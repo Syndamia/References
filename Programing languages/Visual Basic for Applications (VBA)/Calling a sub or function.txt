@@ -1,0 +1,31 @@
+Original site: https://docs.microsoft.com/en-us/office/vba/language/concepts/getting-started/calling-sub-and-function-procedures
+
+When you call a sub you just write it's name
+```
+  Sub Main()
+    TestMsg
+  End Sub
+
+  Sub TestMsg()
+    MsgBox "This is a test"
+  End Sub
+```
+
+If the sub has parameters, you write them with a comma in between
+```
+  Sub Main()
+    MsgSum 1, 3
+  End Sub
+
+  Sub MsgSum(a As Integer, b As Integer)
+    MsgBox 1 + 3
+  End Sub
+```
+
+When you are using `Call` or need the return of a function you put parentheses around the parameters
+```
+  Sub Main()
+    lblName = InputBox("Please write your name:")
+    Call MsgBox("Your name is cool!")
+  End Sub
+```

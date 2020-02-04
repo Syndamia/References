@@ -1,0 +1,34 @@
+Original site: https://www.youtube.com/watch?v=oRHSrnQueak and https://www.samba.org/samba/docs/current/man-html/smb.conf.5.html
+
+Note: this assumes that you have samba installed and isn't blocked by firewall
+
+Pre-setup for config file:
+
+1. Go to the samba directory: `cd /etc/samba`
+2. Create a file, named 'smb.conf': `sudo xed smb.conf`
+
+Setup file:
+
+1. [global] parameters
+    - `server role = standalone user`
+    - `map to guest = Bad User`
+    - `usershare allow guests = yes`
+    - `hosts allow = 192.168.0.0/16`
+    - `hosts deny = 0.0.0.0/0`
+    - `unix extensions = no`
+
+2. [home] parameters (each network shared foler's name is in the [] and there are parameters after that):
+    - `path = /...` - this defines the serve path that will be used when the folder is accessed by the network
+    - `comment = Some comment` - this defines the folder comment
+    - `read only = yes` - sts teh folder as read only (if = yes) or not (if = no)
+    - `guest ok = yes`
+    - `force user = username`
+    - `force group = group`
+
+Samba (smb/smbd) service:
+
+1. To make sure that there are no errors run: `testparm`
+2. After you have setup the smb.conf, restart the service
+    - Arch linux: `sudo systemctl restart smb`
+    - Debian linux: `sudo service smbd restart`
+

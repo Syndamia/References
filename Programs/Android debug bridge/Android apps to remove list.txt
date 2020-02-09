@@ -99,6 +99,15 @@ pm uninstall -k --user 0 com.google.android.apps.books
 pm uninstall -k --user 0 com.google.android.apps.magazines
 pm uninstall -k --user 0 com.google.android.apps.plus
 
+Knox:
+pm uninstall -k --user 0 com.samsung.knox.securefolder
+pm uninstall -k --user 0 com.knox.vpn.proxyhandler
+pm uninstall -k --user 0 com.samsung.knox.keychain
+pm uninstall -k --user 0 com.sec.enterprise.knox.cloudmdm.smdms
+pm uninstall -k --user 0 com.samsung.android.knox.analytics.uploader
+pm uninstall -k --user 0 com.sec.enterprise.knox.attestation
+pm uninstall -k --user 0 com.samsung.android.knox.containercore
+
 Microsoft Bloatware:
 pm uninstall -k --user 0 com.microsoft.skydrive
 pm uninstall -k --user 0 com.skype.raider

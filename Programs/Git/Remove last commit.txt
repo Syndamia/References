@@ -1,0 +1,6 @@
+Original site: https://gist.github.com/CrookedNumber/8964442
+
+`git reset HEAD^` - remove the last commit (but keeps your changes)
+`git reset --hard HEAD^` - removes the last commit AND removes your changes
+
+Note: if you want to remove more than 1 commit, rather than using HEAD^ you can use HEAD~x where x is your number (HEAD~2 for example)

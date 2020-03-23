@@ -1,0 +1,10 @@
+Original site: https://www.gnu.org/software/grub/manual/grub/html_node/Simple-configuration.html and https://askubuntu.com/questions/716957/what-do-the-nomodeset-quiet-and-splash-kernel-parameters-mean
+
+In the file grub (`/etc/default/grub`) are saved basic grub settings. When using `update-grub`, it will apply the default settings from this file to GRUB.
+
+`GRUB_TIMEOUT_STYLE` - unset or 'menu' will display the GRUB menu on boot and wait the time set from `GRUB_TMEOUT` (pressing a key interrupts the timeout) ; if it is set to 'countdown' or 'hidden', GRUB will wait for `GRUB_TIMEOUT` time and proceed with boot (in that time, if 'ESC' is pressed it will display the menu and wait for input)
+
+`GTUB_TIMEOUT` - value in seconds that determines GRUB waiting ; if it is set to -1 it will mean indefinetly
+
+`GRUB_CMDLINE_LINUX_DEFAULT` - adds command-line arguments to default menu entry (after those, listed in `GRUB_CMDLINE_LINUX`)
+    - by default it should be "quiet splash" ; "splash" causes the spash screen to be shown ; "quiet" means that the splash screen won't be disrupted by any boot messages

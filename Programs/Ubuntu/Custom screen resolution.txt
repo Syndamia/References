@@ -1,0 +1,14 @@
+Original site: http://ubuntuhandbook.org/index.php/2017/04/custom-screen-resolution-ubuntu-desktop/
+
+1. Get the name of the monitor (either somewhere in the settings or by typing `xrandr` and seeing the first word on the second line of the output)
+
+2. Caculate VESA CVT. Type `cvt x y`, where x is the vertical lines and y, the horisontal
+    - example: `cvt 1600 900`
+
+3. Add the information as a new mode. Copy the part after the word 'Modeline', and paste it after `sudo xrandr --newmode`
+    - example: `sudo xrandr --newmode "1600x900_60.00"  118.25  1600 1696 1856 2112  900 903 908 934 -hsync +vsync`
+
+4. Add the mode to your display device: `sudo xrandr --addmode MonitorName ModeName`. The ModeName is the string in the beginning of the Modeline
+    - exmaple: `sudo xrandr --addmode eDP-1 "1600x900_60.00"`
+
+Note: To save these settings after restart, in the file `~/.profile` add at the end lines from steps 3 and 4 (without sudo).

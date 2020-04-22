@@ -1,0 +1,3 @@
+Original site: https://unix.stackexchange.com/questions/219341/how-to-apt-delete-repository
+
+In `/etc/apt/sources.list.d/` there exists lists with the repositories. Either remove a list entirely, delete the repository from a list or comment the desired repository (commenting is done with "# ")

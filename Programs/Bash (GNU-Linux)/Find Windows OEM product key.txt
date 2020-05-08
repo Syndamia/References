@@ -1,0 +1,6 @@
+Original site: https://www.cyberciti.biz/faq/linux-find-windows-10-oem-product-key-command/
+
+This command will should you the windows product key on your hardware:
+`sudo strings /sys/firmware/acpi/tables/MSDM`
+
+Note: it works for Windows 8 and 10, don't know about older versions

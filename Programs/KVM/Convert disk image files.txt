@@ -1,0 +1,9 @@
+Original site: https://www.servethehome.com/converting-a-hyper-v-vhdx-for-use-with-kvm-or-proxmox-ve/2/
+
+To convert from one disk image file format to another (from vhd to qcow2 for example) you can use `qemu-img`
+ - `qemu-img convert -O FILE_FORMAT_TO_CONVERT_TO FILE_TO_CONVERT FILE_TO_COVERT`
+
+Example (convert `Windows10.vhd` to `Windows10.qcow2`):
+ - `qemu-img convert -O qcow2 Windows10.vhd Windows10.qcow2`
+If you want the converted file to be in another directory (example with default libvirt directory):
+ - `qemu-img convert -O qcow2 Windows10.vhd /var/lib/libvirt/images/Windows10.qcow2`

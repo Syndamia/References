@@ -1,0 +1,9 @@
+Original site: https://github.com/jedi4ever/veewee/issues/996#issuecomment-375931044
+
+This error happens when the disk image is in the home directory of a user and `libvirt` doesn't have access to it.
+
+To fix it you need to either move the image outside the home directory (for example in the default location of `/var/lib/libvirt/images`) or grand supplimentary rights
+
+To grand supplimentary rights: `sudo setfacl -m u:libvirt-qemu:rx /home/YOUR_USER_NAME`
+ - you can check with: `sudo getfacl -e /home/YOUR_USER_NAME`
+ - note: the user might be named jsut 'qemu' instead of 'libvirt-qemu' (`sudo setfacl -m u:qemu:rx /home/YOUR_USER_NAME`)

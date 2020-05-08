@@ -1,0 +1,6 @@
+Original site: https://askubuntu.com/a/940069
+
+There is a big in the `accoountsservice` package.
+
+Do this as a workaround: `printf "[User]\nSystemAccount=true\n" | sudo tee /var/lib/AccountsService/users/libvirt-qemu`
+And restart the service: `sudo systemctl restart accounts-daemon.service`

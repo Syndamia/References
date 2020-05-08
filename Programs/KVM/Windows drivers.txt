@@ -1,0 +1,7 @@
+Original site: https://docs.fedoraproject.org/en-US/quick-docs/creating-windows-virtual-machines-using-virtio-drivers/
+
+To install the windows drivers, you should download the ISO from this site: https://docs.fedoraproject.org/en-US/quick-docs/creating-windows-virtual-machines-using-virtio-drivers/ . 
+
+Then in the windows virtual machine mount it/extract the folders inside.
+
+You will need to manually install the drivers (in Device Manager select desired device, click on Update driver)

@@ -1,0 +1,11 @@
+Original sites: https://www.howtogeek.com/117635/how-to-install-kvm-and-create-virtual-machines-on-ubuntu/ and https://www.linuxsecrets.com/discussions/8839-error-opening-spice-console-spiceclientgtk-missing
+
+WARNING: KVM only works on CPUs with virtualization support. 
+         To check this, run the command `egrep -c '(svm|vmx)' /proc/cpuinfo`. If it returns anything more than 0, your CPU supports virtualization, but a 0 means it doesn't
+
+You need to insall the following packages with your package manager:
+`qemu-kvm libvirt-bin bridge-utils virt-manager gir1.2-spice-client-glib-2.0 gir1.2-spice-client-gtk-3.0`
+
+Then add your user to the `libvirt` group (on older versions of KVM it is named `libvirtd`)
+ - `sudo adduser YOUR_USER_NAME libvirt`
+After that, log out and back in

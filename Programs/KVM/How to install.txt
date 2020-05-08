@@ -4,7 +4,9 @@ WARNING: KVM only works on CPUs with virtualization support.
          To check this, run the command `egrep -c '(svm|vmx)' /proc/cpuinfo`. If it returns anything more than 0, your CPU supports virtualization, but a 0 means it doesn't
 
 You need to insall the following packages with your package manager:
-`qemu-kvm libvirt-bin bridge-utils virt-manager gir1.2-spice-client-glib-2.0 gir1.2-spice-client-gtk-3.0`
+ - On ubuntu based systems: `qemu-kvm libvirt-bin bridge-utils virt-manager gir1.2-spice-client-glib-2.0 gir1.2-spice-client-gtk-3.0`
+ - On arch based systems: `virt-manager virt-viewer dnsmasq vde2 bridge-utils openbsd-netcat ebtables iptables` (and `gir1.2-spice-client-glib-2.0 gir1.2-spice-client-gtk-3.0`, I think)
+   - through AUR install `libguestfs`
 
 Then add your user to the `libvirt` group (on older versions of KVM it is named `libvirtd`)
  - `sudo adduser YOUR_USER_NAME libvirt`

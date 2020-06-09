@@ -1,0 +1,8 @@
+Original site: https://itsfoss.com/install-mysql-ubuntu/
+
+1. From here (https://dev.mysql.com/downloads/repo/apt/), click "Download" on the appropriate version and then, on "No thanks, just start my download" right-click and "Copy link location"
+2. After that download it: `curl -OL LINK_HERE` (you might need to install `curl`)
+3. Then `sudo dpkg -i mysql-apt-config` (mysql-apt-config is a bit different on download)
+4. `sudo apt update`
+5. `sudo apt install mysql-server -y` then go down and select "Ok", after that input desired mysql root password and just click enter until the end
+6. `sudo mysql_secure_installation`

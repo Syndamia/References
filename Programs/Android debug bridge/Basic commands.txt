@@ -1,13 +1,17 @@
 Original site: https://www.maketecheasier.com/uninstall-system-apps-without-root-android/ and http://adbcommand.com/adbshell
 
 `adb devices` - shows a list of all connected devices and their status (if it says device, it means you have allowed the pc usb debugging acces, if it says something else, check you have done everything in 'Getting started.txt')
+
 `adb shell` - start the interactive shell (us directly adb commands, without having to put 'adb shell' in front of it every time)
+
 `pm list packages` - lists all installed packages (applications) on the device
     Note: you can use grep to search package names that conatain specific letters/words by using grep (for example, this searches for packages that contain 'google' ini their name`pm list packages | grep 'google'`)
+
 `pm uninstall -k --user 0 package-name` - uninstalls a specifict package (package-name)
     Note: without rooting your phone, you can only uninstall apps for the default user (you)
     -k is used to keep data and cache directories
     --user is used to signify which user you are removing the package from (0 is the default user, the one that you use)
+
 `pm install package-name` - instal a specific package (package-name)
 
 Note: for more information on commands visit http://adbcommand.com/adbshell, type in console/terminal 'adb help' or open 'Help.txt'

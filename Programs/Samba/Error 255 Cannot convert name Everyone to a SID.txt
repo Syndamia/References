@@ -1,0 +1,5 @@
+Original site: https://forum.manjaro.org/t/samba-sharing-problem-net-usershare-returned-error-255/46850/2
+
+To fix it, edit (maybe add) the following to the configuration file (`/etc/samba/smb.conf`):
+`group = sambashare` to `force group = +sambashare (required)`
+`map to guest = bad user` to `map to guest = bad password (optional)`

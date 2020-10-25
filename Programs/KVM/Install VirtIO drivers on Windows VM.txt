@@ -1,0 +1,20 @@
+Original site: https://linuxhint.com/install_virtio_drivers_kvm_qemu_windows_vm/
+
+# Setting up vm 
+1. Download virtIO drivers iso: `https://docs.fedoraproject.org/en-US/quick-docs/creating-windows-virtual-machines-using-virtio-drivers/`
+2. After you have created the VM, turn it off, then make the 'Disk bus' on the virtual disk to be 'VirtIO'
+3. Make the Virtual Network Interface (NIC) 'Device model' to be 'virtio'
+4. Add virtIO iso as a CDROM device (Add Hardware)
+5. Start the virtual machine (you might need to setup the `Boot options` to the Windows iso)
+
+# Installing Windows
+1. On the 'Where do you want to install Windows?' page, click 'Load driver'
+2. Click 'Browse' and navigate to the virtio drivers CD and select `\amd64\win10` and click OK
+3. Select the driver, Next, finally setup your storage device and continue with installation
+
+# Installing drivers
+1. Open device manager (right-click on Start menu)
+2. In `Display adapters` right click on `Microsoft Basic Display Adapter` and `Update driver`
+3. Click `Browse my computer for driver software`, then n `Search for drivers in this location` select the virtIO drivers CD
+4. Click `Next` and it should install the `Red Hat QXL controller`, click on Close
+5. Do steps 1-4 for the `Ethernet Controller`
